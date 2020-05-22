@@ -29,7 +29,7 @@ std::string Kernel();
 
 // CPU
 enum CPUStates {
-  kUser_ = 0,
+  kUser_ = 1,
   kNice_,
   kSystem_,
   kIdle_,
@@ -41,11 +41,8 @@ enum CPUStates {
   kGuestNice_
 };
 std::vector<std::string> CpuUtilization();
-long Jiffies();
-long ActiveJiffies();
 long StartTime(int pid);
 long ActiveJiffies(int pid);
-long IdleJiffies();
 
 // Processes
 std::string Command(int pid);
