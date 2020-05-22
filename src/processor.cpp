@@ -1,11 +1,8 @@
-#include "processor.h"
-
 #include <unistd.h>
-
 #include <string>
 #include <vector>
 
-#include "iostream"
+#include "processor.h"
 #include "linux_parser.h"
 
 using namespace LinuxParser;
@@ -71,6 +68,5 @@ float Processor::Utilization(unsigned int delay) {
   idled = idle - prevIdle;
 
   CPU_Percentage = float(totald - idled) / float(totald);
-  std::cout << totald << ", "<<idled << ", " << CPU_Percentage*100 << "\n";
   return CPU_Percentage;
 }
