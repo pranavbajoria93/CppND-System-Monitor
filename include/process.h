@@ -22,8 +22,7 @@ class Process {
  private:
   int pid_;
   long procUpTime{0};
-  float cpuUtilization;
-  int ram;
+  float cpuUtilization{0.0};
 };
 
 #endif

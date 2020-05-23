@@ -15,7 +15,6 @@ using namespace LinuxParser;
 // constructor populates feilds that can be used to compare processes while sorting
 Process::Process(int pid):pid_(pid){
     procUpTime = LinuxParser::UpTime(pid_);
-    ram = std::stoi(LinuxParser::Ram(pid_));
     cpuUtilization = CpuUtilization();
 }
 
@@ -36,7 +35,7 @@ string Process::Command() { return LinuxParser::Command(pid_); }
 
 // Return this process's memory utilization
 string Process::Ram() { 
-    return to_string(ram); }
+    return LinuxParser::Ram(pid_); }
 
 // Return the user (name) that generated this process
 string Process::User() { return LinuxParser::User(pid_); }
